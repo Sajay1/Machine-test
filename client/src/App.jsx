@@ -5,7 +5,6 @@ import MenuItemForm from './components/MenuItemForm';
 import MenuList from './components/MenuList';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import form from './image/image1.png';
 
 
 export default function App() {
@@ -54,7 +53,6 @@ export default function App() {
       {selectedMenuId && (
         <>
           <MenuItemForm menuId={selectedMenuId} onItemCreated={handleItemCreated} />
-          <img src={form} alt="" />
           <div className="border-t pt-4">
             <h2 className="text-xl font-semibold">Menu Items:</h2>
             <ul className="list-disc ml-6 mt-2">
