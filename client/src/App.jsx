@@ -5,7 +5,7 @@ import MenuItemForm from './components/MenuItemForm';
 import MenuList from './components/MenuList';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import form from './image/image1.png'
+import form from './image/image1.png';
 
 
 export default function App() {
