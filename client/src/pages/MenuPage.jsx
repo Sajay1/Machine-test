@@ -13,6 +13,15 @@ function MenuPage() {
   const handleMenuClick = (id) => {
     fetchMenuById(id).then(res => setSelectedMenu(res.data));
   };
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await createMenu({ name, description });
+        setName('');
+        setDescription('');
+        fetchMenus().then(res => setMenus(res.data));
+    };
 
   return (
     <div>
@@ -33,6 +42,13 @@ function MenuPage() {
           ))}
         </div>
       )}
+      <div>
+          <form onSubmit={handleSubmit}>
+      <input value={name} onChange={e => setName(e.target.value)} placeholder="Menu Name" />
+      <input value={description} onChange={e => setDescription(e.target.value)} placeholder="Description" />
+      <button type="submit">Create Menu</button>
+    </form>
+      </div>
     </div>
   );
 }
